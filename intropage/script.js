@@ -1,3 +1,10 @@
+window.addEventListener("resize", () => {
+    let centerBoxes = document.querySelectorAll(".centerContent");
+    centerBoxes.forEach(box => {
+        height = box.querySelector(".center").scrollHeight;
+        box.style.setProperty("height", height+"px")
+    })
+})
 // left: 37, up: 38, right: 39, down: 40,
 // spacebar: 32, pageup: 33, pagedown: 34, end: 35, home: 36
 /*var keys = {37: 1, 38: 1, 39: 1, 40: 1};
@@ -54,7 +61,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
     up.onclick = move(-1);
     down.onclick = move(1);
-    */
-
-
+    
+    
 })
+   */

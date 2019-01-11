@@ -14,15 +14,23 @@ html{
     overflow: hidden;
 }
 body{
+    -ms-overflow-style: none; 
     overflow-x: hidden;
     scroll-snap-type: y proximity;
-    scroll-snap-stop: always;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+
 }
+body::-webkit-scrollbar { width: 0 !important }
 
 
 .snap{
     scroll-snap-align: start;
-    height: 100vh;
+
+    width: 100vw;
+}
+
+.fullheight{
+    min-height: 100vh;
 }
 
 .snap:nth-child(2n){
@@ -34,7 +42,7 @@ header, main > section{
 }
 
 p{
-    margin: 10px;
+    padding: 10px;
     line-height: 1.5;
 }
 
@@ -50,11 +58,19 @@ header, main{
     position: relative;
 }
 
-.centerContent > *{
+.centerContent > .center{
     text-align: center;
     position: absolute;
+    padding: 10px;
+    width: 100vw;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateY(-50%);
 }
 
+/*
+    Sass:
+    .fullpage
+    .centerContent
+    JS:
+    resize .fullpage and .centerContent on windowresize
+*/
